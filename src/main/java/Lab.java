@@ -1,6 +1,6 @@
 import java.util.Deque;
 import java.util.Queue;
-
+import java.util.ArrayDeque;
 /**
  * Queues are FIFO - first in, first out, like a checkout line. They are used in algorithms where it is needed to keep
  * track of the order that the elements were inserted in. For instance, tech support tickets may be
@@ -36,7 +36,7 @@ public class Lab {
      * Stack behavior.
      */
     public Deque<String> createQueue(){
-        return null;
+        return new ArrayDeque<String>();
     }
 
     /**
@@ -45,7 +45,7 @@ public class Lab {
      * @return the length of queue.
      */
     public int getSize(Queue<String> queue){
-        return 0;
+        return queue.size();
     }
 
     /**
@@ -55,7 +55,9 @@ public class Lab {
      * @param item a String that should be added to Queue.
      */
     public void addToEndOfQueue(Queue<String> queue, String item){
-
+        // add(item) automatically adds to tail
+        // can also use addLast(item)
+        queue.add(item);
     }
 
     /**
@@ -65,7 +67,11 @@ public class Lab {
      * @return the next String due to be removed (polled) from the Queue<String> (the oldest item in the queue.)
      */
     public String removeFromStartOfQueue(Queue<String> queue){
-        return "";
+        // can use remove() or poll()
+
+        //return queue.remove();
+
+        return queue.poll();
     }
 
     /**
@@ -75,6 +81,6 @@ public class Lab {
      * @return the next String due to be removed (peeked) from the Queue<String> (the oldest item in the queue.)
      */
     public String getStartOfQueueWithoutRemoving(Queue<String> queue){
-        return "";
+        return queue.peek();
     }
 }
